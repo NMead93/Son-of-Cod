@@ -4,22 +4,46 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Son Of Cod</title>
+    <link href="~/css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="header">
-        <div class="sized-container">
-            <ul class="nav-bar">
-                <li>
-                    @Html.ActionLink("Home", "Index", "Home")
-                </li>
-                <li>
-                    @Html.ActionLink("Newsletter", "Newsletter", "Home")
-                </li>
-                <li>
-                    @Html.ActionLink("Admin", "Index", "Admin")
-                </li>
-            </ul>
+    <div class="header-wrapper">
+        <div class="header-top">
+            <div class="sized-container">
+                <ul class="nav-top">
+                    <li>
+                        <a href="#">Recipes</a>
+                    </li>
+                    <li>
+                        <a href="#">Locations</a>
+                    </li>
+                    <li>
+                        <a href="#">Purchasing</a>
+                    </li>
+                </ul>
+                <a href="/home" class="corporate-link"></a>
+                <a href="/home" class="brand-link"></a>
+            </div>
         </div>
+        <div class="header-bottom">
+            <div class="sized-container">
+                <ul class="nav-bar">
+                    <li>
+                        @Html.ActionLink("Admin", "Index", "Admin")                   
+                    </li>
+                    <li>
+                        @Html.ActionLink("Newsletter", "Newsletter", "Home")           |
+                    </li>
+                    <li>
+                        @Html.ActionLink("Home", "Index", "Home")           |
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <figure class="logo"></figure>
     </div>
 
     <div>

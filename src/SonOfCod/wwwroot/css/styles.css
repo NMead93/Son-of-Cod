@@ -2,7 +2,58 @@
     display: block;
 }
 
-.header {
+.header-top {
+    width: 100%;
+    height: 30px;
+    line-height: 25px;
+    background: #e5e5e5;
+    border-bottom: solid 1px #d5d5d5;
+}
+
+.header-top .corporate-link {
+    width: 224px;
+    height: 127px;
+    background: url(../images/brand.jpg) no-repeat;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 120px;
+    z-index: 600;
+}
+
+.header-top .brand-link {
+    width: 120px;
+    height: 109px;
+    background: url(../images/logo.jpg) no-repeat;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 600;
+    margin-right: 10px;
+}
+
+.nav-top {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+.nav-top li{
+    display: inline-block;
+    margin-right: 60px;
+}
+
+.nav-top li a{
+    font-size: .917em;
+    color: #797979;
+    text-decoration: none;
+}
+
+.header-bottom {
     width: 100%;
     height: 60px;
     background: #fff;
@@ -29,7 +80,7 @@
     margin-top: 5px;
 }
 
-.nav-bar {
+.nav-bar li{
     font-family: Montserrat,sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -37,8 +88,9 @@
     height: 47px;
     line-height: 47px;
     text-align: center;
-    float: left;
+    float: right;
     position: relative;
+    margin-left: 20px;
 }
 
 .nav-bar a {
@@ -46,4 +98,13 @@
     padding: 0 15px;
     text-decoration: none;
     display: inline-block;
+}
+
+.logo {
+    background-image: url(../images/about-header.jpg);
+    padding-top: 26.06%;
+    height: 383px;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
 }
