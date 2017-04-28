@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Son Of Cod</title>
+</head>
+<body>
+    <div class="header">
+        <div class="sized-container">
+            <ul class="nav-bar">
+                <li>
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("Newsletter", "Newsletter", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("Admin", "Index", "Admin")
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
