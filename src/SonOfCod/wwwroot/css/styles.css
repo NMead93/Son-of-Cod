@@ -2,6 +2,17 @@
 @import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
 @import "http://fonts.googleapis.com/css?family=Quicksand:700,400";
 
+.welcome-title {
+    color: #584c40;
+    font-family: Georgia,serif;
+    font-weight: 400;
+    font-size: 2.667em;
+    text-align: center;
+}
+
+.welcome-body {
+    text-align: center;
+}
 
 .header-top {
     width: 100%;
