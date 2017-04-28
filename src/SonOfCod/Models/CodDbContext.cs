@@ -13,5 +13,17 @@ namespace SonOfCod.Models
         {
 
         }
+
+        public virtual DbSet<Subscriber> Subscribers { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Cod;integrated security=True;");
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
     }
 }

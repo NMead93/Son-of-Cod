@@ -1,6 +1,4 @@
-﻿div {
-    display: block;
-}
+﻿
 
 .header-top {
     width: 100%;
@@ -107,4 +105,8 @@
     background-size: cover;
     background-position: center;
     margin: 0;
+}
+
+.login-failed {
+    color: red;
 }

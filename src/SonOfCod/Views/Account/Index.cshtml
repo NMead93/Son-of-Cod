@@ -1,0 +1,75 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Security.Claims
+@model SonOfCod.ViewModels.AdminViewModel
+
+<h1>Admin</h1>
+@if (User.Identity.IsAuthenticated)
+{
+    <ul>
+        <li class="admin-edit">
+            @Html.ActionLink("Edit Landing", "Edit", "Account")
+        </li>
+        <li class="admin-add">
+            @Html.ActionLink("Add Admin", "AddAdmin", "Account")
+        </li>
+    </ul>
+
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Current Subscribers
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="mailing-list">
+                        @foreach (var subscriber in Model.Subscribers)
+                        {
+                            <li>@subscriber.Name | @subscriber.Email</li>
+                        }
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h2>Welcome @Model.User.UserName</h2>
+}
+else
+{
+    @if (Model.LoginFailed)
+    {
+        <h2 class="login-failed">Login Failed. Please Try Again:</h2>
+    }
+    else
+    {
+        <h2>Please Login:</h2>
+    }
+
+    @using (Html.BeginForm("Index", "Account", FormMethod.Post))
+    {
+        @Html.LabelFor(m => m.UserName)
+        @Html.TextBoxFor(m => m.UserName)
+
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)
+
+        <input type="submit" value="Log In" class="btn btn-default" />
+    }
+}
+
+
+
+

@@ -3,3 +3,42 @@
 }
 
 <h1>Home Page</h1>
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Subscribe
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <section>
+                    <hgroup>
+                        <h2>
+                            Subscribe for a weekly newsletter
+                        </h2>
+                        <h1 class="free">For Free!</h1>
+                    </hgroup>
+                    <div class="well">
+                        <form action="#">
+                            <div class="input-group">
+                                <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
+                                <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Name" required>
+                                <button class="btn btn-info btn-lg" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <small class="promise"><em>We won't send spam.</em></small>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
