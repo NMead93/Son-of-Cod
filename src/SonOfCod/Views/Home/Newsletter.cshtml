@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SonOfCod.Models.Subscriber
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-12">
+            <div class="box">
+                <div class="icon">
+                    <div class="image"><i class="fa fa-flag"></i></div>
+                    <div class="info">
+                        <h3 class="title">Weekly Newsletter!</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper.
+                        </p>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            Subscribe
+                        </button>
+                    </div>
+                    <div class="space"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Subscribe</h4>
+                </div>
+                <div class="modal-body">
+                    <section>
+                        <hgroup>
+                            <h2>
+                                Subscribe for a weekly newsletter
+                            </h2>
+                            <h1 class="free">For Free!</h1>
+                        </hgroup>
+                        <div class="well">
+                            @using (Html.BeginForm("Subscribe", "Home", FormMethod.Post))
+                            {
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "Your Email", @class = "btn btn-lg" } })
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { placeholder = "Your Name", @class = "btn btn-lg" } })
+                                    <input class="btn btn-info btn-lg" type="submit" value="Submit">
+                                </div>
+                            }
+                        </div>
+                        <small class="promise"><em>We won't send spam.</em></small>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

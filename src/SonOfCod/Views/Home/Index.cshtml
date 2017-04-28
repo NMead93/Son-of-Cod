@@ -1,44 +1,42 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Home Page</h1>
-
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Subscribe
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <section>
-                    <hgroup>
-                        <h2>
-                            Subscribe for a weekly newsletter
-                        </h2>
-                        <h1 class="free">For Free!</h1>
-                    </hgroup>
-                    <div class="well">
-                        <form action="#">
-                            <div class="input-group">
-                                <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Email" required>
-                                <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Your Name" required>
-                                <button class="btn btn-info btn-lg" type="submit">Submit</button>
-                            </div>
-                        </form>
+<section class="section-white">
+    <div class="container">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="~/images/fresh-fish.jpeg" alt="...">
+                    <div class="carousel-caption">
+                        <h2>Heading</h2>
                     </div>
-                    <small class="promise"><em>We won't send spam.</em></small>
-                </section>
+                </div>
+                <div class="item">
+                    <img src="~/images/fish.jpg" alt="...">
+                    <div class="carousel-caption">
+                        <h2>Heading</h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/images/shrimp.jpg" alt="...">
+                    <div class="carousel-caption">
+                        <h2>Heading</h2>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
         </div>
     </div>
-</div>
+</section>
+<h1>Home Page</h1>
+
