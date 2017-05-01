@@ -20,7 +20,8 @@ namespace SonOfCod.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            PageInfo pageInfo = _db.PageInfo.FirstOrDefault(entry => entry.Id == 1);
+            return View(pageInfo);
         }
 
         public IActionResult Newsletter()

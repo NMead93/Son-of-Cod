@@ -15,6 +15,7 @@ namespace SonOfCod.Models
         }
 
         public virtual DbSet<Subscriber> Subscribers { get; set; }
+        public virtual DbSet<PageInfo> PageInfo { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

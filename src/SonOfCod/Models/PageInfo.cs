@@ -13,6 +13,7 @@ namespace SonOfCod.Models
         [Key]
         public int Id { get; set; }
         public string NewsletterBody { get; set; }
+        public string LandingTitle { get; set; }
         public string LandingBody { get; set; }
     }
 }

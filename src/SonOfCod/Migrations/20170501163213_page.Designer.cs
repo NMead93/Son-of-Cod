@@ -8,9 +8,10 @@ using SonOfCod.Models;
 namespace SonOfCod.Migrations
 {
     [DbContext(typeof(CodDbContext))]
-    partial class CodDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170501163213_page")]
+    partial class page
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -170,22 +171,6 @@ namespace SonOfCod.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("SonOfCod.Models.PageInfo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("LandingBody");
-
-                    b.Property<string>("LandingTitle");
-
-                    b.Property<string>("NewsletterBody");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PageInfo");
                 });
 
             modelBuilder.Entity("SonOfCod.Models.Subscriber", b =>
