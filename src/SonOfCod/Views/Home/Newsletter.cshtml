@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model SonOfCod.Models.Subscriber
+@model SonOfCod.ViewModels.NewsletterViewModel
 
 <div class="container">
     <div class="row">
@@ -12,7 +12,7 @@
                     <div class="info">
                         <h3 class="title">Weekly Newsletter!</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper.
+                            @Model.PageInfo.NewsletterBody
                         </p>
                         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                             Subscribe
@@ -44,8 +44,8 @@
                             @using (Html.BeginForm("Subscribe", "Home", FormMethod.Post))
                             {
                                 <div class="input-group">
-                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "Your Email", @class = "btn btn-lg" } })
-                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { placeholder = "Your Name", @class = "btn btn-lg" } })
+                                    @Html.EditorFor(model => model.Subscriber.Email, new { htmlAttributes = new { placeholder = "Your Email", @class = "btn btn-lg" } })
+                                    @Html.EditorFor(model => model.Subscriber.Name, new { htmlAttributes = new { placeholder = "Your Name", @class = "btn btn-lg" } })
                                     <input class="btn btn-info btn-lg" type="submit" value="Submit">
                                 </div>
                             }

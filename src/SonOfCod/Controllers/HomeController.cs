@@ -26,13 +26,17 @@ namespace SonOfCod.Controllers
 
         public IActionResult Newsletter()
         {
-            return View();
+            NewsletterViewModel viewModel = new NewsletterViewModel
+            {
+                PageInfo = _db.PageInfo.FirstOrDefault(page => page.Id == 1)
+            };
+            return View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult Subscribe(Subscriber newSubscriber)
+        public IActionResult Subscribe(NewsletterViewModel viewModel)
         {
-            _db.Subscribers.Add(newSubscriber);
+            _db.Subscribers.Add(new Subscriber { Email = viewModel.Subscriber.Email, Name = viewModel.Subscriber.Name });
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
