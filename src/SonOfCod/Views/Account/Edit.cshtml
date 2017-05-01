@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model SonOfCod.Models.PageInfo
+
+@using (Html.BeginForm("Edit", "Account", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.Id)
+
+    @Html.LabelFor(model => model.NewsletterBody)
+    @Html.TextBoxFor(model => model.NewsletterBody)
+
+    @Html.LabelFor(model => model.LandingTitle)
+    @Html.TextBoxFor(model => model.LandingTitle)
+
+    @Html.LabelFor(model => model.LandingBody)
+    @Html.TextBoxFor(model => model.LandingBody)
+
+    <input type="submit" value="Save" />
+}

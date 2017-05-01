@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using SonOfCod.Models;
 using SonOfCod.ViewModels;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace SonOfCod.Controllers
 {
@@ -49,6 +50,20 @@ namespace SonOfCod.Controllers
             {
                 return View(new AdminViewModel { LoginFailed = true });
             }
+        }
+
+        public IActionResult Edit()
+        {
+            PageInfo pageInfo = _db.PageInfo.FirstOrDefault(page => page.Id == 1);
+            return View(pageInfo);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(PageInfo pageInfo)
+        {
+            _db.Entry(pageInfo).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         public IActionResult AddAdmin()
